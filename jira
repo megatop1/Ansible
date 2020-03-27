@@ -1,6 +1,6 @@
 ###The playbook will do the following
-1. Download the latest version of java
-2. Download MariaDB
+1. Download the latest version of java CHECK
+2. Download MariaDB CHECK
 3. Create MariaDB Database
 4. Create a jira database user with correct permissions 
 5. Create directory named software
