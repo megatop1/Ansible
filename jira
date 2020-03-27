@@ -1,0 +1,43 @@
+###The playbook will do the following
+1. Download the latest version of java
+2. Download MariaDB
+3. Create MariaDB Database
+4. Create a jira database user with correct permissions 
+5. Create directory named software
+6. Download the jira bin file from atlassian website
+7. run command chmod 700 bin-file to give it permissions
+8. run through the jira executable: ./bin
+9. create firewall rules for jira like opening port 8080
+
+---   #Every ansible playbook starts with three "-"
+- name: install jira server #Give your playbook a name 
+  hosts: all    #Declare the hosts that will be affected by your playbook
+  become: true  #this means become root 
+  
+  tasks:    #Tasks are where the shell commands that need to get ran go 
+  - name: install java  #This is the name of our first task
+    yum:    #name of the repo we are using
+      name: java    #name of what is being downloaded 
+      state: latest   #grabs the latest version 
+      
+  - name: install mariaDB  
+    yum:    
+      name: mariadb    
+      state: latest    
+      
+  -name: download jira from atlassian website   #Name of the task
+  get_url:      #This functions means we need to download something from a URL 
+    url: https://www.atlassian.com/software/jira/downloads/binary/atlassian-jira-software-8.7.1-x64.bin   #This performs the download
+    dest: /software   #This is where our file is being downloaded too
+    
+    
+    
+    
+  -name: extract jira packages
+  unarchive: 
+    src: /software/atlassian-jira-software-8.7.1-x64.bin
+    remote_src: yes
+    
+    -name: start jira services    #This task will ensure that even though we log out from the server, the service continously runs in the background
+     shell: /opt/atlassian/jira/bin/startup.sh #This is the shell command being ran 
+    
