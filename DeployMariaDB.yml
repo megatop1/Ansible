@@ -5,7 +5,7 @@
   become: true         #Become root when running the commands 
   vars:      #Variables that we can use later on in the playbook 
     mysql_root_password: "Password1!"       #the root password for the mysql root user 
-tasks: 
+  tasks: 
    - name: install
      yum:
       - mariadb-server
