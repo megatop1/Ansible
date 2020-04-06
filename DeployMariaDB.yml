@@ -18,7 +18,7 @@
     enabled: true    #Enable the service
     state: started   #Start the service
          
-- name: set root password mariadb. This task also enforces root HAS TO login with a password
+- name: set root password mariadb #This task also enforces root HAS TO login with a password
   mysql_user: #This is a module for mysql 
     check_implicit_admin: true    #Checks if root user can log in without a password
     login_user: root
