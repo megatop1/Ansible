@@ -10,7 +10,7 @@
       yum:
         name:
           - mariadb-server
-          - python3-PyMySQL
+          - MySQL-python
       state: latest
         
     - name: start mariadb
