@@ -30,7 +30,7 @@
     - name: download jira from atlassian website   #Name of the task
       get_url:      #This functions means we need to download something from a URL 
         url: https://www.atlassian.com/software/jira/downloads/binary/atlassian-jira-software-8.7.1-x64.bin   #This performs the download
-        dest: /software   #This is where our file is being downloaded too
+        dest: ~/software   #This is where our file is being downloaded too
         
     - name: chmod 700 jira-install-bin
       file: 
@@ -42,12 +42,12 @@
     - name: Run through installer
       shell: executable=atlassian-jira-software-8.7.1-x64.bin source=/software
         
-    - name: extract jira packages
-      unarchive: 
-        src: /software/atlassian-jira-software-8.7.1-x64.bin
-        remote_src: yes
-        dest: /software #LAST THING I EDITED
+    #- name: extract jira packages
+     # unarchive: 
+      #  src: ~/software/atlassian-jira-software-8.7.1-x64.bin
+       # remote_src: yes
+        #dest: ~/software #LAST THING I EDITED
     
-    - name: start jira services    #This task will ensure that even though we log out from the server, the service continously runs in the background
-      shell: /opt/atlassian/jira/bin/startup.sh #This is the shell command being ran 
+   # - name: start jira services    #This task will ensure that even though we log out from the server, the service continously runs in the background
+    #  shell: /opt/atlassian/jira/bin/startup.sh #This is the shell command being ran 
     
