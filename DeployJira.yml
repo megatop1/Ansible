@@ -27,6 +27,13 @@
         url: https://www.atlassian.com/software/jira/downloads/binary/atlassian-jira-software-8.7.1-x64.bin   #This performs the download
         dest: /software   #This is where our file is being downloaded too
         
+    - name: chmod 700 jira-install-bin
+      file: 
+        path: /software/atlassian-jira-software-8.7.1-x64.bin
+        owner: root
+        group: root
+        mode: 700
+        
     - name: extract jira packages
       unarchive: 
         src: /software/atlassian-jira-software-8.7.1-x64.bin
