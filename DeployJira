@@ -21,16 +21,12 @@
         name:
           - java
       state: latest
-       
       
     -name: download jira from atlassian website   #Name of the task
       get_url:      #This functions means we need to download something from a URL 
         url: https://www.atlassian.com/software/jira/downloads/binary/atlassian-jira-software-8.7.1-x64.bin   #This performs the download
         dest: /software   #This is where our file is being downloaded too
-    
-    
-    
-    
+        
     -name: extract jira packages
       unarchive: 
         src: /software/atlassian-jira-software-8.7.1-x64.bin
