@@ -7,19 +7,19 @@
   vars:      #Variables that we can use later on in the playbook 
     mysql_root_password: "Password1!"       #the root password for the mysql root user 
    
-  tasks: 
-   -name: install
+tasks: 
+   - name: install
      yum:
       - mariadb-server
       state: latest
         
-    -name: start mariadb
+- name: start mariadb
      service:
       name: mariadb    #Service that the below commands will be performed on 
         enabled: true    #Enable the service
         state: started   #Start the service
          
-    -name: set root password mariadb. This task also enforces root HAS TO login with a password
+- name: set root password mariadb. This task also enforces root HAS TO login with a password
      mysql_user: $This is a module for mysql 
       check_implicit_admin: true    #Checks if root user can log in without a password
       login_user: root
@@ -28,7 +28,7 @@
           password: "{{ mysql_root_password }}"
           host: localhost   #Specify we are working on local machine
           
--name: delete remote root
+- name: delete remote root
        mysql_user: $This is a module for mysql 
           check_implicit_admin: true    #Checks if root user can log in without a password
           login_user: root
