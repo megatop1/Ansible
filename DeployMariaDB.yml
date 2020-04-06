@@ -10,7 +10,7 @@
       yum:
         name:
           - mariadb-server
-          - MySQL-python
+          - MySQL-python #Required for ansible to manage the mariaDB Server. Error will occur without and it wont run next play
       state: latest
         
     - name: start mariadb
