@@ -40,7 +40,7 @@
         mode: 700
         
     - name: Run through installer
-      shell: executable=atlassian-jira-software-8.7.1-x64.bin source=~/software
+      shell: executable=atlassian-jira-software-8.7.1-x64.bin source=~/software/atlassian-jira-software-8.7.1-x64.bin
         
     #- name: extract jira packages
      # unarchive: 
