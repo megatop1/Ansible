@@ -33,7 +33,7 @@
     login_user: root
     login_password: "{{ mysql_root_password }}  #In ansible, to reference a variable it  has to be put in opening/closing curly braces
     user: root    #Specify root to be the log in MySQL User
-    host: "{{ ansible_fqdn }}" fully qualified domain name. This is a fact that we gathered in the beginning. Works accross multiple systems
+    host: "{{ ansible_fqdn }}" #fully qualified domain name. This is a fact that we gathered in the beginning. Works accross multiple systems
     state: absent   #removes user account
           
                     
