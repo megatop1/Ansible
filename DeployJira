@@ -9,34 +9,32 @@
 #8. run through the jira executable: ./bin
 #9. create firewall rules for jira like opening port 8080
 
----   #Every ansible playbook starts with three "-"
-- name: install jira server #Give your playbook a name 
-  hosts: all    #Declare the hosts that will be affected by your playbook
-  become: true  #this means become root 
+---   #Every Ansible Playbook starts with 3 "-"
+- name: Jira           #Name of the playbook
+  hosts: all           #Affects all hosts
+  gather_facts: true   #Get variable names and facts
+  become: true         #Become root when running the commands 
   
-  tasks:    #Tasks are where the shell commands that need to get ran go 
-   - name: install java  #This is the name of our first task
-     yum:    #name of the repo we are using
-      name: java    #name of what is being downloaded 
-      state: latest   #grabs the latest version 
+  tasks: 
+    - name: install java
+      yum:
+        name:
+          - java
+      state: latest
+       
       
-  - name: install mariaDB  
-    yum:    
-      name: mariadb    
-      state: latest    
-      
-  -name: download jira from atlassian website   #Name of the task
-  get_url:      #This functions means we need to download something from a URL 
-    url: https://www.atlassian.com/software/jira/downloads/binary/atlassian-jira-software-8.7.1-x64.bin   #This performs the download
-    dest: /software   #This is where our file is being downloaded too
+    -name: download jira from atlassian website   #Name of the task
+      get_url:      #This functions means we need to download something from a URL 
+        url: https://www.atlassian.com/software/jira/downloads/binary/atlassian-jira-software-8.7.1-x64.bin   #This performs the download
+        dest: /software   #This is where our file is being downloaded too
     
     
     
     
-  -name: extract jira packages
-  unarchive: 
-    src: /software/atlassian-jira-software-8.7.1-x64.bin
-    remote_src: yes
+    -name: extract jira packages
+      unarchive: 
+        src: /software/atlassian-jira-software-8.7.1-x64.bin
+        remote_src: yes
     
     -name: start jira services    #This task will ensure that even though we log out from the server, the service continously runs in the background
      shell: /opt/atlassian/jira/bin/startup.sh #This is the shell command being ran 
