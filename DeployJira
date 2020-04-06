@@ -15,8 +15,8 @@
   become: true  #this means become root 
   
   tasks:    #Tasks are where the shell commands that need to get ran go 
-  - name: install java  #This is the name of our first task
-    yum:    #name of the repo we are using
+   - name: install java  #This is the name of our first task
+     yum:    #name of the repo we are using
       name: java    #name of what is being downloaded 
       state: latest   #grabs the latest version 
       
