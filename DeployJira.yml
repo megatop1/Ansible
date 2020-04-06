@@ -22,6 +22,11 @@
           - java
       state: latest
       
+    - name: Make software directory #Creates directory ~/software
+      file:      
+        path: ~/software
+        state: directory   
+      
     - name: download jira from atlassian website   #Name of the task
       get_url:      #This functions means we need to download something from a URL 
         url: https://www.atlassian.com/software/jira/downloads/binary/atlassian-jira-software-8.7.1-x64.bin   #This performs the download
@@ -29,7 +34,7 @@
         
     - name: chmod 700 jira-install-bin
       file: 
-        path: /software/atlassian-jira-software-8.7.1-x64.bin
+        path: ~/software/atlassian-jira-software-8.7.1-x64.bin
         owner: root
         group: root
         mode: 700
