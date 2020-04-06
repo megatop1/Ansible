@@ -47,6 +47,7 @@
         command: ~/software/atlassian-jira-software-8.7.1-x64.bin
         responses: 
             "This will install Jira Software 8.7.1 on your computer. \nOK [o, Enter], Cancel [c]\n" : "c"
+            "Express Install (use default settings) [1], Custom Install (reccomended for advanced users) [2, Enter], Upgrade an existing Jira installation [3]" : 
           
         
     #- name: extract jira packages
