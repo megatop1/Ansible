@@ -46,8 +46,8 @@
       expect: 
         command: ~/software/atlassian-jira-software-8.7.1-x64.bin
         responses: 
-          Question: This will install Jira Software 8.7.1 on your computer.
-            - response: c
+          Question: 
+            - c
           
         
     #- name: extract jira packages
