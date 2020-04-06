@@ -8,8 +8,8 @@
   tasks: 
     - name: install
       yum:
-      name:
-        - mariadb-server
+        name:
+          - mariadb-server
       state: latest
         
 - name: start mariadb
