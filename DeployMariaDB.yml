@@ -13,18 +13,18 @@
      state: latest
         
 - name: start mariadb
-     service:
-      name: mariadb    #Service that the below commands will be performed on 
-        enabled: true    #Enable the service
-        state: started   #Start the service
+  service:
+    name: mariadb    #Service that the below commands will be performed on 
+    enabled: true    #Enable the service
+    state: started   #Start the service
          
 - name: set root password mariadb. This task also enforces root HAS TO login with a password
-     mysql_user: $This is a module for mysql 
+    mysql_user: $This is a module for mysql 
       check_implicit_admin: true    #Checks if root user can log in without a password
       login_user: root
-        login_password: "{{ mysql_root_password }}  #In ansible, to reference a variable it  has to be put in opening/closing curly braces
-        user: root    #Specify root to be the log in MySQL User
-          password: "{{ mysql_root_password }}"
+      login_password: "{{ mysql_root_password }}  #In ansible, to reference a variable it  has to be put in opening/closing curly braces
+      user: root    #Specify root to be the log in MySQL User
+      password: "{{ mysql_root_password }}"
           host: localhost   #Specify we are working on local machine
           
 - name: delete remote root
