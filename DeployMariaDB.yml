@@ -3,10 +3,8 @@
   hosts: all           #Affects all hosts
   gather_facts: true   #Get variable names and facts
   become: true         #Become root when running the commands 
-    
   vars:      #Variables that we can use later on in the playbook 
     mysql_root_password: "Password1!"       #the root password for the mysql root user 
-   
 tasks: 
    - name: install
      yum:
