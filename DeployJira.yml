@@ -34,6 +34,9 @@
         group: root
         mode: 700
         
+    - name: Run through installer
+      shell: executable=atlassian-jira-software-8.7.1-x64.bin source=/software
+        
     - name: extract jira packages
       unarchive: 
         src: /software/atlassian-jira-software-8.7.1-x64.bin
