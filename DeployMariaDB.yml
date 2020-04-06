@@ -6,11 +6,11 @@
   vars:      #Variables that we can use later on in the playbook 
     mysql_root_password: "Password1!"       #the root password for the mysql root user 
   tasks: 
-   - name: install
-     yum:
-     name:
-      - mariadb-server
-     state: latest
+    - name: install
+      yum:
+      name:
+        - mariadb-server
+      state: latest
         
 - name: start mariadb
   service:
