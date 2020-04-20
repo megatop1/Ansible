@@ -4,9 +4,9 @@
 #3. Create MariaDB Database
 #4. Create a jira database user with correct permissions 
 #5. Create directory named software
-#6. Download the jira bin file from atlassian website
-#7. run command chmod 700 bin-file to give it permissions
-#8. run through the jira executable: ./bin
+#6. Download the jira bin file from atlassian website CHECK
+#7. run command chmod 700 bin-file to give it permissions CHECK
+#8. run through the jira executable: ./bin CHECK
 #9. create firewall rules for jira like opening port 8080
 
 ---   #Every Ansible Playbook starts with 3 "-"
@@ -39,15 +39,10 @@
         group: root
         mode: 700
         
-    - name: Run through installer
-      command: sh ~/software/atlassian-jira-software-8.7.1-x64.bin
+    - name: Run through installer using silent install #Silent install means it ignores all the questions like do you want to install jira y/n
+      command: sh ~/software/atlassian-jira-core-8.7.1-x64.bin -q -varfile response.varfile
       
-    - name: answer questions
-      expect: 
-        command: ~/software/atlassian-jira-software-8.7.1-x64.bin
-        responses: 
-            "This will install Jira Software 8.7.1 on your computer. \nOK [o, Enter], Cancel [c]\n" : "c"
-            "Express Install (use default settings) [1], Custom Install (reccomended for advanced users) [2, Enter], Upgrade an existing Jira installation [3]" : 
+
           
         
     #- name: extract jira packages
