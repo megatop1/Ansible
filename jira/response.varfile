@@ -3,11 +3,11 @@
 
 #install4j response file for JIRA Software 7.13.13
 #Tue Mar 10 18:12:08 EDT 2020
-executeLauncherAction$Boolean=true
+app.jiraHome=/opt/atlassian/jira
 app.install.service$Boolean=true
-sys.confirmedUpdateInstallationString=true
-launch.application$Boolean=false
+sys.confirmedUpdateInstallationString=false
 sys.languageId=en
 sys.installationDir=/opt/atlassian/jira
+executeLauncherAction$Boolean=true
+httpPort$Long=8080
 portChoice=default
-app.jiraHome=/opt/atlassian/jira
