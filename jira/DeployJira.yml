@@ -38,12 +38,12 @@
         owner: root
         group: root
         mode: 700
+        
+    - name: Move response file to installation directory 
+      command: mv ~/Ansible/jira/response.varfile ~/software/
 
     - name: Change directory to software 
-      command: cd ~/software
-      
-    - name: Move response file to installation directory 
-      command: mv root/Ansible/jira/response.varfile ~/software/      
+      command: cd ~/software     
 
     - name: Run through installer using silent install #Silent install means it ignores all the questions like do you want to install jira y/n
       shell: ./atlassian-jira-core-8.7.1-x64.bin -q -varfile response.varfile
