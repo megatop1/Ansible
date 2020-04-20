@@ -46,7 +46,7 @@
       command: cd ~/software     
 
     - name: Run through installer using silent install #Silent install means it ignores all the questions like do you want to install jira y/n
-      command: ./atlassian-jira-core-8.7.1-x64.bin -q -varfile response.varfile
+      command: ./atlassian-jira-core-8.7.1-x64.bin
       
     - name: Create firewall rules
       command: firewall-cmd --permanent --add-port=8080/tcp
