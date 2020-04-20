@@ -38,9 +38,6 @@
         owner: root
         group: root
         mode: 700
-        
-    - name: Move response.varfile to installation directory #As long as this file is in the same directory as the installer, we can run a silent install
-      command: mv response.varfile ~/software/
 
     - name: Run through installer using silent install #Silent install means it ignores all the questions like do you want to install jira y/n
       command: sh ~/software/atlassian-jira-core-8.7.1-x64.bin -q -varfile response.varfile
