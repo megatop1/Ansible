@@ -1,1 +1,13 @@
 #Required to do a silent install. This is part of RJ's deploy jira playbook
+#This is taken directly from a previous jira installation located in /opt/atlassian/jira/.install4j/response.varfile and is made by atlassian
+
+#install4j response file for JIRA Software 7.13.13
+#Tue Mar 10 18:12:08 EDT 2020
+backupJira$Boolean=false
+executeLauncherAction$Boolean=true
+app.install.service$Boolean=false
+sys.confirmedUpdateInstallationString=true
+launch.application$Boolean=false
+existingInstallationDir=/opt/atlassian/jira
+sys.languageId=en
+sys.installationDir=/opt/atlassian/jira
