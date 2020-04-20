@@ -6,8 +6,10 @@
 backupJira$Boolean=false
 executeLauncherAction$Boolean=true
 app.install.service$Boolean=true
-sys.confirmedUpdateInstallationString=true
+sys.confirmedUpdateInstallationString=false
 launch.application$Boolean=true
-#existingInstallationDir=/opt/atlassian/jira
+existingInstallationDir=/opt/atlassian/jira
 sys.languageId=en
 sys.installationDir=/opt/atlassian/jira
+portChoice=default
+app.jiraHome=/var/atlassian/application-data/jira
