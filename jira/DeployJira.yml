@@ -57,20 +57,20 @@
         name: 'jira'
         enabled: yes
         
-    - name: Make jira systemd service
-      command: cp ~/Ansible/jira/jira.service /lib/systemd/system/jira.service
+    #- name: Make jira systemd service
+      #command: cp ~/Ansible/jira/jira.service /lib/systemd/system/jira.service
       
-    - name: chmod 664 jira.service 
-      file: 
-        path: /lib/systemd/system/jira.service
-        owner: root
-        group: root
-        mode: 664
+    #- name: chmod 664 jira.service 
+      #file: 
+        #path: /lib/systemd/system/jira.service
+        #owner: root
+        #group: root
+        #mode: 664
      
-    - name: enable jira service for systemd
-      systemctl:
-        name: 'jira'
-        enabled: yes
+    #- name: enable jira service for systemd
+      #systemctl:
+        #name: 'jira'
+        #enabled: yes
               
     #- name: extract jira packages
      # unarchive: 
