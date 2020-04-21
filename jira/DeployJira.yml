@@ -66,6 +66,11 @@
         owner: root
         group: root
         mode: 664
+     
+    - name: enable jira service for systemd
+      systemctl:
+        name: 'jira'
+        enabled: yes
               
     #- name: extract jira packages
      # unarchive: 
