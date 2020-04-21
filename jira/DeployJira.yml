@@ -53,7 +53,7 @@
       command: firewall-cmd --reload
       
     - name: enable jira service
-      systemd:
+      service:
         name: 'jira'
         enabled: yes
               
