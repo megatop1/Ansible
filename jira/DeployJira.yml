@@ -58,7 +58,7 @@
         enabled: yes
         
     - name: Make jira systemd service
-        command: cp /etc/init.d/jira /lib/systemd/system/jira.service
+      command: cp /etc/init.d/jira /lib/systemd/system/jira.service
               
     #- name: extract jira packages
      # unarchive: 
