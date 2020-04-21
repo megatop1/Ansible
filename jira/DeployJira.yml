@@ -1,6 +1,6 @@
 #The playbook will do the following
 #1. Download the latest version of java CHECK 
-#2. Create directory named software
+#2. Create directory named software CHECK
 #3. Download the jira bin file from atlassian website CHECK
 #4. Run command chmod 700 bin-file to give it permissions CHECK
 #5. Run through the jira executable: ./bin CHECK
@@ -54,6 +54,10 @@
       
     - name: Reload firewall
       command: firewall-cmd --permanent --reload
+      
+    - name: enable jira service
+      name: 'jira'
+      enabled: yes
               
     #- name: extract jira packages
      # unarchive: 
