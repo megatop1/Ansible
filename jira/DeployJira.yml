@@ -6,6 +6,7 @@
 #5. Run through the jira executable: ./bin CHECK
 #6. Create firewall rules for jira like opening port 8080
 #7. Enable the jira service for future use
+#8. Make jira a systemctl file 
 
 ---   #Every Ansible Playbook starts with 3 "-"
 - name: Jira           #Name of the playbook
