@@ -53,8 +53,9 @@
       command: firewall-cmd --reload
       
     - name: enable jira service
-      name: 'jira'
-      enabled: yes
+      systemd:
+        name: 'jira'
+        enabled: yes
               
     #- name: extract jira packages
      # unarchive: 
