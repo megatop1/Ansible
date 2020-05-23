@@ -1,0 +1,26 @@
+--- 
+- name: mariaDB           #Name of the playbook
+  hosts: all           #Affects all hosts
+  gather_facts: true   #Get variable names and facts
+  become: true         #Become root when running the commands 
+  
+  tasks: 
+    - name: install mariaDB
+      yum:
+        name:
+          - mariadb-server mariadb-client
+      state: latest
+      
+    - name: enable mariaDB service
+      service:
+        name: 'mariadb'
+        enabled: yes
+      
+    - name: Open port 8080
+      firewalld:
+        port: 8080/tcp
+        permanent: yes
+        state: enabled
+      
+    - name: Reload firewall
+      command: firewall-cmd --reload
