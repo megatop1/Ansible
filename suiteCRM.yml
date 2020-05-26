@@ -4,11 +4,17 @@
   gather_facts: true   #Get variable names and facts
   become: true         #Become root when running the commands 
   
-  tasks: 
+  tasks:
     - name: install apache
       yum:
         name:
           - httpd
+      state: latest
+      
+    - name: install git
+      yum:
+        name:
+          - git
       state: latest
       
     - name: install epel
@@ -24,5 +30,4 @@
     
     - name: git clone suitecrm      
     - git:
-        repo: https://github.com/ansible/ansible-examples.git
-        dest: /src/ansible-examples
+        repo: git clone https://github.com/salesagility/SuiteCRM suitecrm
