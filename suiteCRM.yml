@@ -24,8 +24,8 @@
     file:
       path: /tmp/suitecrm
       state: directory
-    
-  - name: git clone suitecrm 
-    dest: /tmp/suitecrm
+      
+  - name: download suitecrm installer
     git:
-      repo: git clone https://github.com/salesagility/SuiteCRM
+      dest: /tmp/suitecrm
+        repo: git clone https://github.com/salesagility/SuiteCRM
