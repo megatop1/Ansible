@@ -70,4 +70,10 @@
       group: apache
       recurse: yes
       
+  - name: touch virtual host
+    file: 
+      name: suitecrm.conf
+      owner: apache
+      group: apache
+      state: file
       
