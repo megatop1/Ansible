@@ -30,7 +30,12 @@
       repo: 'https://github.com/salesagility/SuiteCRM.git'
       dest: /tmp/suitecrm
       
-  - name: download php rpm 
+  - name: download latest php 
     get_url:
       url: https://mirror.webtatic.com/yum/el7/webtatic-release.rpm   
       dest: /tmp
+      
+  - name: install php rpm 
+    yum:
+      name: /tmp/webtatic-release.rpm  
+      state: present
