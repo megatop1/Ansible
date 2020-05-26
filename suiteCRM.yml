@@ -1,6 +1,6 @@
 ---   #Every Ansible Playbook starts with 3 "-"
 - name: SuiteCRM           #Name of the playbook
-  hosts: all           #Affects all hosts
+  hosts: localhost          #Affects LOCAL machine
   gather_facts: true   #Get variable names and facts
   become: true         #Become root when running the commands 
   
