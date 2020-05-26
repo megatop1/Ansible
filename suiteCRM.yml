@@ -5,10 +5,10 @@
   become: true         #Become root when running the commands 
   
   tasks: 
-    - name: install the latest version of Apache
-        yum:
-        name: httpd
-        state: latest
+  - name: install the latest version of Apache
+    yum:
+      name: httpd
+      state: latest
       
     - name: install git
       yum:
