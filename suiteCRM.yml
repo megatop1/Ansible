@@ -57,6 +57,7 @@
       state: latest
       
   - name: restart apache
+    service: 
       name: httpd
       enabled: yes
       state: restarted
