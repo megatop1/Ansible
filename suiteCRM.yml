@@ -65,7 +65,9 @@
   - name: give apache permission to /var/www
     file:
       dest: /var/www
+      state: directory 
       owner: apache
       group: apache
+      recurse: yes
       
       
