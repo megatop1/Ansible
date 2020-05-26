@@ -4,10 +4,11 @@
   gather_facts: true   #Get variable names and facts
   become: true         #Become root when running the commands 
   
-  tasks:
+  tasks: 
     - name: install apache
       yum:
-        name: httpd
+        name:
+          - httpd
       state: latest
       
     - name: install git
