@@ -19,7 +19,7 @@
     yum:
       name: epel-release
       state: latest
-    
+      
   - name: create suitecrm directory 
     file:
       path: /tmp/suitecrm
@@ -29,3 +29,6 @@
     git:
       repo: 'https://github.com/salesagility/SuiteCRM.git'
       dest: /tmp/suitecrm
+      
+  - name: download php rpm 
+    get_url: https://mirror.webtatic.com/yum/el7/webtatic-release.rpm     
