@@ -75,5 +75,5 @@
       path: /etc/httpd/conf.d/suitecrm.conf
       owner: apache
       group: apache
-      state: file
+      state: touch
       
