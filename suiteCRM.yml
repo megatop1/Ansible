@@ -27,4 +27,4 @@
     
   - name: git clone suitecrm      
     git:
-      repo: git clone https://github.com/salesagility/SuiteCRM suitecrm
+      repo: git clone https://github.com/salesagility/SuiteCRM /tmp/suitecrm
