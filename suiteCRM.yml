@@ -28,5 +28,5 @@
   - name: download suitecrm installer
     git:
       dest: /tmp/suitecrm
-        repo: https://github.com/salesagility/SuiteCRM
+        repo: 'https://github.com/salesagility/SuiteCRM.git'
         clone: yes
