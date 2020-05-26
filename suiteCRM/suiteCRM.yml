@@ -74,10 +74,6 @@
       group: apache
       recurse: yes
       
-  - name: touch virtual host
-    file: 
-      path: /etc/httpd/conf.d/suitecrm.conf
-      owner: apache
-      group: apache
-      state: touch
+  - name: move virtual host
+    command: mv ~/Ansible/suiteCRM/suitecrm.conf /etc/httpd/conf.d/
       
