@@ -17,7 +17,7 @@
           - httpd
       state: latest
       
-     - name: install epel
+    - name: install epel
       yum:
         name:
           - epel-release
