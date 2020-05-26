@@ -31,5 +31,6 @@
       dest: /tmp/suitecrm
       
   - name: download php rpm 
-    get_url: https://mirror.webtatic.com/yum/el7/webtatic-release.rpm   
-    dest: /tmp
+    get_url:
+      url: https://mirror.webtatic.com/yum/el7/webtatic-release.rpm   
+      dest: /tmp
