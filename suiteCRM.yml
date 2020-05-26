@@ -55,3 +55,8 @@
         - php70w-zlib
         - php70w-curl
       state: latest
+      
+  - name: restart apache
+      name: httpd
+      enabled: yes
+      state: restarted
