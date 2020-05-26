@@ -30,6 +30,10 @@
       repo: 'https://github.com/salesagility/SuiteCRM.git'
       dest: /tmp/suitecrm
       
+  - name: move suitecrm folder to /var/www/html
+    command: mv /tmp/suitecrm /var/www/
+      
+       
   - name: download latest php 
     get_url:
       url: https://mirror.webtatic.com/yum/el7/webtatic-release.rpm   
