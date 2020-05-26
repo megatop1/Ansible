@@ -5,12 +5,6 @@
   become: true         #Become root when running the commands 
   
   tasks: 
-    - name: install git
-      yum:
-        name:
-          - git
-      state: latest
-      
     - name: install apache
       yum:
         name:
