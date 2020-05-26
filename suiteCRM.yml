@@ -60,3 +60,11 @@
       name: httpd
       enabled: yes
       state: restarted
+      
+  - name: give apache permission to /var/www
+    file:
+      dest: /var/www
+      owner: apache
+      group: apache
+      
+      
