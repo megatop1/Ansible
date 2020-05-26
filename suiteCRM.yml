@@ -25,6 +25,7 @@
       path: /tmp/suitecrm
       state: directory
     
-  - name: git clone suitecrm      
+  - name: git clone suitecrm 
+    dest: /tmp/suitecrm
     git:
-      repo: git clone https://github.com/salesagility/SuiteCRM /tmp/suitecrm
+      repo: git clone https://github.com/salesagility/SuiteCRM
