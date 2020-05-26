@@ -10,23 +10,21 @@
       name: httpd
       state: latest
       
-    - name: install git
-      yum:
-        name:
-          - git
+  - name: install git
+    yum:
+      name: git
       state: latest
       
-    - name: install epel
-      yum:
-        name:
-          - epel-release
+  - name: install epel
+    yum:
+      name: epel-release
       state: latest
     
-    - name: create suitecrm directory 
-      file:
-        path: /tmp/suitecrm
-        state: directory
+  - name: create suitecrm directory 
+    file:
+      path: /tmp/suitecrm
+      state: directory
     
-    - name: git clone suitecrm      
+  - name: git clone suitecrm      
     - git:
         repo: git clone https://github.com/salesagility/SuiteCRM suitecrm
