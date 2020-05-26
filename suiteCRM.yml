@@ -26,5 +26,5 @@
       state: directory
     
   - name: git clone suitecrm      
-    - git:
-        repo: git clone https://github.com/salesagility/SuiteCRM suitecrm
+    git:
+      repo: git clone https://github.com/salesagility/SuiteCRM suitecrm
