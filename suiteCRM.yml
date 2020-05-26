@@ -1,5 +1,5 @@
 ---   #Every Ansible Playbook starts with 3 "-"
-- name: SuiteCrm           #Name of the playbook
+- name: SuiteCRM           #Name of the playbook
   hosts: all           #Affects all hosts
   gather_facts: true   #Get variable names and facts
   become: true         #Become root when running the commands 
@@ -16,6 +16,12 @@
         name:
           - httpd
       state: latest
+      
+     - name: install epel
+      yum:
+        name:
+          - epel-release
+      state: latest
     
     - name: create suitecrm directory 
       file:
@@ -23,6 +29,6 @@
         state: directory
     
     - name: git clone suitecrm      
-      - git:
-          repo: https://github.com/ansible/ansible-examples.git
-          dest: /src/ansible-examples
+    - git:
+        repo: https://github.com/ansible/ansible-examples.git
+        dest: /src/ansible-examples
