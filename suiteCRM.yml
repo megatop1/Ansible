@@ -72,7 +72,7 @@
       
   - name: touch virtual host
     file: 
-      name: suitecrm.conf
+      path: /etc/httpd/conf.d/suitecrm.conf
       owner: apache
       group: apache
       state: file
