@@ -30,3 +30,4 @@
       dest: /tmp/suitecrm
         repo: 'https://github.com/salesagility/SuiteCRM.git'
         clone: yes
+        update: no
