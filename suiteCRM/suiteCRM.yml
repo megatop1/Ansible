@@ -31,7 +31,7 @@
       dest: /tmp/suitecrm
       
   - name: move suitecrm folder to /var/www/html
-    command: mv /tmp/suitecrm /var/www/
+    command: mv /tmp/suitecrm /var/www/html
       
        
   - name: download latest php 
