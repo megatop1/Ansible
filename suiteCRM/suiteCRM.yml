@@ -60,19 +60,13 @@
         - php70w-curl
       state: latest
       
-  - name: restart apache
-    service: 
-      name: httpd
-      enabled: yes
-      state: restarted
-      
-  #- name: give apache permission to /var/www/suitecrm
-    #file:
-      #dest: /var/www/suitecrm
-      #state: directory 
-      #owner: apache
-      #group: apache
-      #recurse: yes
+  - name: give apache permission to /var/www/suitecrm
+    file:
+      dest: /var/www/suitecrm
+      state: directory 
+      owner: apache
+      group: apache
+      recurse: yes
       
   - name: Open port 80
     firewalld:
@@ -85,4 +79,9 @@
      
   - name: move virtual host
     command: mv ~/Ansible/suiteCRM/suitecrm.conf /etc/httpd/conf.d/
-      
+    
+  - name: restart apache
+    service: 
+      name: httpd
+      enabled: yes
+      state: restarted
