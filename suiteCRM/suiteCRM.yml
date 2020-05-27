@@ -66,13 +66,13 @@
       enabled: yes
       state: restarted
       
-  - name: give apache permission to /var/www/suitecrm
-    file:
-      dest: /var/www/suitecrm
-      state: directory 
-      owner: apache
-      group: apache
-      recurse: yes
+  #- name: give apache permission to /var/www/suitecrm
+    #file:
+      #dest: /var/www/suitecrm
+      #state: directory 
+      #owner: apache
+      #group: apache
+      #recurse: yes
       
   - name: Open port 80
     firewalld:
