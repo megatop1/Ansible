@@ -66,9 +66,9 @@
       enabled: yes
       state: restarted
       
-  - name: give apache permission to /var/www
+  - name: give apache permission to /var/www/suitecrm
     file:
-      dest: /var/www
+      dest: /var/www/suitecrm
       state: directory 
       owner: apache
       group: apache
