@@ -78,9 +78,7 @@
     command: firewall-cmd --reload
     
   - name: install composer
-    yum:
-      name: composer
-      state: latest
+    command: /var/www/html/suitecrm/composer install
     
   - name: restart apache
     service: 
