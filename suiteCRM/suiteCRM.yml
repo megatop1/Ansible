@@ -77,6 +77,11 @@
   - name: Reload firewall
     command: firewall-cmd --reload
     
+  - name: install composer
+    yum:
+      name: composer
+      state: latest
+    
   - name: restart apache
     service: 
       name: httpd
