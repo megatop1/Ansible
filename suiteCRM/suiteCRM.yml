@@ -60,9 +60,9 @@
         - php70w-curl
       state: latest
       
-  - name: give apache permission to /var/www/suitecrm
+  - name: give apache permission to /var/www/html/suitecrm
     file:
-      dest: /var/www/suitecrm
+      dest: /var/www/html/suitecrm
       state: directory 
       owner: apache
       group: apache
