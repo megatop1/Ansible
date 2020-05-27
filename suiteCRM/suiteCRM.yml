@@ -77,8 +77,8 @@
   - name: Reload firewall
     command: firewall-cmd --reload
      
-  #- name: move virtual host
-  #  command: mv ~/Ansible/suiteCRM/suitecrm.conf /etc/httpd/conf.d/
+  - name: move virtual host
+    command: mv ~/Ansible/suiteCRM/suitecrm.conf /etc/httpd/conf.d/
     
   - name: restart apache
     service: 
