@@ -87,9 +87,8 @@
     yum:
       name: composer
       state: latest
-      
-  - name: change directory to suitecrm
-    chdir: /var/www/html/suitecrm 
     
   - name: install composer in suitecrm
     command: composer install    
+    args: 
+      chdir: /var/www/html/suitecrm 
