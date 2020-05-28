@@ -83,7 +83,13 @@
       enabled: yes
       state: reloaded
       
-  - name: install composer
+  - name: install composer package
     yum:
       name: composer
       state: latest
+      
+  - name: change directory to suitecrm
+    chdir: /var/www/html/suitecrm 
+    
+  - name: install composer in suitecrm
+    command: composer install    
