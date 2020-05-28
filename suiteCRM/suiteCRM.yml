@@ -85,3 +85,8 @@
       name: httpd
       enabled: yes
       state: restarted
+      
+  - name: install composer
+    yum:
+      name: composer
+      state: latest
