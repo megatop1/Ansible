@@ -77,14 +77,11 @@
   - name: Reload firewall
     command: firewall-cmd --reload
     
-  - name: install composer
-    command: /var/www/html/suitecrm/composer install
-    
   - name: restart apache
     service: 
       name: httpd
       enabled: yes
-      state: restarted
+      state: start
       
   - name: install composer
     yum:
