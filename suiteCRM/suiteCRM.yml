@@ -81,7 +81,7 @@
     service: 
       name: httpd
       enabled: yes
-      state: start
+      state: reloaded
       
   - name: install composer
     yum:
