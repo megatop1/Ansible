@@ -33,7 +33,7 @@
   - name: move suitecrm folder to /var/www/html
     command: mv /tmp/suitecrm /var/www/html
       
-       
+       #Modify this task to download php from IUS Community Repo which is a more secure version of PHP
   - name: download latest php 
     get_url:
       url: https://mirror.webtatic.com/yum/el7/webtatic-release.rpm   
