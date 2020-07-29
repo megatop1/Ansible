@@ -1,1 +1,25 @@
 ---
+
+#Install apache
+
+#Install IUS Community Repo 
+
+#Enable IUS Community Repo
+
+#Download IUS GPG-KEY
+
+#Install PHP and required modules
+
+#Setup Firewall Rules
+
+#Download Nextcloud Installer
+
+#Unzip the installer to /var/www/html
+
+#Change ownership of nextcloud to apache
+
+#Add custom apache VHost file
+
+#Restart Apache
+
+#Setup Database
