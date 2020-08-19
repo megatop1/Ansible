@@ -35,8 +35,8 @@
   - name: download latest php 
     command: curl 'https://setup.ius.io/' -o setup-ius.sh  
  
-  - name: run IUS install script 
-    sh: setup-ius.sh
+  #- name: run IUS install script 
+  #  sh: setup-ius.sh
  
   - name: install all php packages required
     yum:
