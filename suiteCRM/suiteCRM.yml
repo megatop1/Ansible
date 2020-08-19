@@ -34,7 +34,6 @@
     unarchive: 
       src: /tmp/suitecrm/SuiteCRM-7.11.15.zip
       dest: /tmp/suitecrm
-      remote_src: True
 
   - name: move suitecrm folder to /var/www/html
     command: mv /tmp/suitecrm /var/www/html
