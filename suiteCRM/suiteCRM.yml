@@ -26,7 +26,9 @@
       state: directory
       
   - name: download suitecrm installer
-    get_url: https://suitecrm.com/files/162/SuiteCRM-7.11/513/SuiteCRM-7.11.15.zip
+    get_url:
+      url: https://suitecrm.com/files/162/SuiteCRM-7.11/513/SuiteCRM-7.11.15.zip
+      dest: /tmp/suitecrm
       
   - name: move suitecrm folder to /var/www/html
     command: mv /tmp/suitecrm /var/www/html
