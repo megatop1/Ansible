@@ -40,24 +40,25 @@
       dest: /tmp
       
   - name: install php rpm 
-    yum:
-      name: /tmp/webtatic-release.rpm  
-      state: present
-      
+    command: curl 'https://setup.ius.io/' -o setup-ius.sh 
+ 
+  - name: run IUS install script 
+    sh: setup-ius.sh
+ 
   - name: install all php packages required
     yum:
       name: 
-        - php70w
-        - php70w-mysql
-        - php70w-xml
-        - php70w-json
-        - php70w-gd
-        - php70w-mbstring
-        - php70w-zip
-        - php70w-imap
-        - php70w-pcre
-        - php70w-zlib
-        - php70w-curl
+        - php74
+        - php74-mysql
+        - php74-xml
+        - php74-json
+        - php74-gd
+        - php74-mbstring
+        - php74-zip
+        - php74-imap
+        - php74-pcre
+        - php74-zlib
+        - php74-curl
       state: latest
       
   - name: give apache permission to /var/www/html/suitecrm
