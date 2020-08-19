@@ -15,11 +15,6 @@
       name: git
       state: latest
       
-  - name: Download SuiteCRM Zip
-    get_url:
-      name: epel-release
-      state: latest
-      
   - name: install epel
     yum:
       name: epel-release
