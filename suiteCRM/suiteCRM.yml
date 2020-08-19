@@ -26,7 +26,7 @@
       state: directory
       
   - name: download suitecrm installer
-    git:
+  - git:
       repo: 'https://github.com/salesagility/SuiteCRM.git'
       dest: /tmp/suitecrm
       clone: yes
