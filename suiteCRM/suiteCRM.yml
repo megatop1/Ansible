@@ -29,6 +29,7 @@
     git:
       repo: 'https://github.com/salesagility/SuiteCRM.git'
       dest: /tmp/suitecrm
+      clone: yes
       
   - name: move suitecrm folder to /var/www/html
     command: mv /tmp/suitecrm /var/www/html
