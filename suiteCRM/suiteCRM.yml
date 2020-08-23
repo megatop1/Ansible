@@ -49,12 +49,12 @@
 
   - name: move suitecrm folder to /var/www/html
     command: mv /tmp/suitecrm /var/www/html
-      #Modify this task to download php from IUS Community Repo which is a more secure version of PHP
+
   - name: download IUS community Repo for PHP
-    command: curl 'https://setup.ius.io/' -o setup-ius.sh  
- 
-  - name: run IUS install script 
-    shell: setup-ius.sh
+    yum:
+      name: yum install \ https://repo.ius.io/ius-release-el7.rpm
+      state: latest
+
  
   - name: install all php packages required
     yum:
