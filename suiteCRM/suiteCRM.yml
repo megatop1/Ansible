@@ -37,7 +37,7 @@
       remote_src: yes
 
   - name: move suitecrm folder to /var/www/html
-    command: cp /tmp/suitecrm/SuiteCRM-7.11.15/* /var/www/html/suitecrm
+    command: cp /tmp/suitecrm/SuiteCRM-7.11.15 /var/www/html/suitecrm
 
   - name: download IUS community Repo for PHP
     yum:
