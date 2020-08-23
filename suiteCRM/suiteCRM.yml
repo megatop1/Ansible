@@ -37,7 +37,11 @@
       remote_src: yes
 
   - name: move suitecrm folder to /var/www/html
-    command: mv /tmp/suitecrm/* /var/www/html/suitecrm
+    copy:
+      src: /tmp/suitecrm
+      dest: /var/www/html/suitecrm
+      owner: apache
+      group: apache
 
   - name: download IUS community Repo for PHP
     yum:
