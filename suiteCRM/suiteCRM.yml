@@ -30,11 +30,6 @@
       path: /tmp/suitecrm
       state: directory
 
-  - name: Download SuiteCRM Zip
-    get_url:
-      url: https://suitecrm.com/files/162/SuiteCRM-7.11/513/SuiteCRM-7.11.15.zip
-      dest: /tmp/suitecrm
-
   - name: unzip suitecrm  
     unarchive: 
       src: https://suitecrm.com/files/162/SuiteCRM-7.11/513/SuiteCRM-7.11.15.zip
