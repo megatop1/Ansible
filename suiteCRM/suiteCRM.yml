@@ -47,7 +47,7 @@
   - name: Enable PHP74
     yum:
       name: https://repo.ius.io/ius-release-el7.rpm
-      enablerepo: ius php74
+      enablerepo: ius
 
   - name: install all php packages required
     yum:
