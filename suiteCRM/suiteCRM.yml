@@ -42,11 +42,7 @@
   - name: install yum plugins replace package
     yum: 
       name: yum-plugins-replace
-      state: latest
-
-  - name: install yum plugins replace package
-    command: yum replace php --replace-with php74
-      
+      state: latest     
     
   - name: download IUS community Repo for PHP
     yum:
