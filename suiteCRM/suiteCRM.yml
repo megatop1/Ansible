@@ -42,12 +42,8 @@
   - name: download IUS community Repo for PHP
     yum:
       name: https://repo.ius.io/ius-release-el7.rpm
-
-  - name: Enable PHP74
-    yum:
-      name: https://repo.ius.io/ius-release-el7.rpm
       enablerepo: ius
-
+      
   - name: install all php packages required
     yum:
       name: 
