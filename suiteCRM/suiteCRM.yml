@@ -38,11 +38,6 @@
 
   - name: move suitecrm folder to /var/www/html
     command: mv /tmp/suitecrm/SuiteCRM-7.11.15 /var/www/html/suitecrm
-
-  - name: install yum plugins replace package
-    yum: 
-      name: yum-plugins-replace
-      state: latest     
     
   - name: download IUS community Repo for PHP
     yum:
