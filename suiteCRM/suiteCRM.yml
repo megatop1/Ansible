@@ -39,12 +39,15 @@
   - name: move suitecrm folder to /var/www/html
     command: mv /tmp/suitecrm/SuiteCRM-7.11.15 /var/www/html/suitecrm
 
-  - name: Remove old php5
-    yum:
-      name: php
-      autoremove: true 
-      notify: yum-clean-metadata
+  - name: install yum plugins replace package
+    yum: 
+      name: yum-plugins-replace
+      state: latest
 
+  - name: install yum plugins replace package
+    command: yum replace php --replace-with php74
+      
+    
   - name: download IUS community Repo for PHP
     yum:
       name: https://repo.ius.io/ius-release-el7.rpm
