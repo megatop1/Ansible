@@ -42,7 +42,7 @@
   - name: download IUS community Repo for PHP
     yum:
       name: https://repo.ius.io/ius-release-el7.rpm
-      enablerepo: ius
+      state: latest
       
   - name: install all php packages required
     yum:
