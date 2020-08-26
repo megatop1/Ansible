@@ -43,11 +43,12 @@
     yum:
       name: php
       autoremove: true 
+      notify: yum-clean-metadata
 
   - name: download IUS community Repo for PHP
     yum:
       name: https://repo.ius.io/ius-release-el7.rpm
-      state: latest
+      gpgcheck: yes
 
   - name: Enable PHP74
     yum:
