@@ -45,26 +45,23 @@
       state: latest
 
   - name: Enable IUS Repo
-    command:  yum-config-manager --enable ius-php74
-
-
-  - name: Install PHP Packages
-    command: yum -y install wget php php-{pear,cgi,common,curl,mbstring,gd,mysqlnd,gettext,bcmath,imap,json,xml,fpm}
- # - name: install all php packages required
-  #  yum:
-   #   name: 
-    #    - php74-common
-     #   - php-curl
-      #  - php74-xml
-       # - php74-json
-        #- php74-mysqlnd
-        #- php74-mbstring
-        #- php74-pecl*
-        #- php-imap
-        #- php74-devel
-      #disablerepo: "*"
-      #enablerepo: "ius"
-      #state: latest
+    command:  yum --enablerepo=remi-php74 install php
+    
+  - name: install all php packages required
+    yum:
+      name: 
+        - php74-common
+        - php74-url
+        - php74-xml
+        - php74-json
+        - php74-mysqlnd
+        - php74-mbstring
+        - php74-pecl*
+        - php74-imap
+        - php74-devel
+      disablerepo: "*"
+      enablerepo: "remi"
+      state: latest
       
   - name: give apache permission to /var/www/html/suitecrm
     file:
