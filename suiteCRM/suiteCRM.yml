@@ -48,7 +48,7 @@
     command:  yum-config-manager --enable ius-php74
 
 
-  - name: Enable IUS Repo
+  - name: Install PHP Packages
     command: yum -y install wget php php-{pear,cgi,common,curl,mbstring,gd,mysqlnd,gettext,bcmath,imap,json,xml,fpm}
  # - name: install all php packages required
   #  yum:
