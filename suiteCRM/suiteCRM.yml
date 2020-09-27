@@ -47,17 +47,17 @@
   - name: install all php packages required
     yum:
       name: 
-        - php
-        - php-mysql
-        - php-xml
-        - php-json
-        - php-gd
-        - php-mbstring
-        - php-zip
-        - php-imap
-        - php-pcre
-        - php-zlib
-        - php-curl
+        - php74
+        - php74-mysql
+        - php74-xml
+        - php74-json
+        - php74-gd
+        - php74-mbstring
+        - php74-zip
+        - php74-imap
+        - php74-pcre
+        - php74-zlib
+        - php74-curl
       state: latest
       
   - name: give apache permission to /var/www/html/suitecrm
