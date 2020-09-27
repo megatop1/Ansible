@@ -27,13 +27,13 @@
 
   - name: create suitecrm install directory 
     file:
-      path: /tmp/suitecrm
+      path: /var/www/html/suitecrm
       state: directory
 
   - name: unzip suitecrm  
     unarchive: 
       src: https://suitecrm.com/files/162/SuiteCRM-7.11/513/SuiteCRM-7.11.15.zip
-      dest: /tmp/suitecrm
+      dest: /var/www/html/suitecrm
       remote_src: yes
 
   #- name: move suitecrm folder to /var/www/html
@@ -91,4 +91,4 @@
   - name: install composer in suitecrm
     command: composer install    
     args: 
-      chdir: /var/www/html/suitecrm 
+      chdir: /var/www/html/suitecrm/SuiteCRM-7.11.15
