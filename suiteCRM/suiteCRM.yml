@@ -36,8 +36,8 @@
       dest: /tmp/suitecrm
       remote_src: yes
 
-  - name: move suitecrm folder to /var/www/html
-    command: mv /tmp/suitecrm/SuiteCRM-7.11.15 /var/www/html/suitecrm
+  #- name: move suitecrm folder to /var/www/html
+   # command: mv /tmp/suitecrm/SuiteCRM-7.11.15 /var/www/html/suitecrm
     
   - name: Download Remote IUS Community Repo
     yum:
