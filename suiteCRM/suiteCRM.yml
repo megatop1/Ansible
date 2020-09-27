@@ -58,7 +58,6 @@
         - php74-mbstring
         - php-zip
         - php74-imap
-        - php74-pcre
         - php74-zlib
         - php74-curl
       disablerepo: "*"
