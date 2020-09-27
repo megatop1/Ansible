@@ -50,7 +50,7 @@
   - name: install all php packages required
     yum:
       name: 
-        - php74
+        - php74-common
         - php74-mysql
         - php74-xml
         - php74-json
@@ -61,6 +61,8 @@
         - php74-pcre
         - php74-zlib
         - php74-curl
+      disablerepo: "*"
+      enablerepo: "ius"
       state: latest
       
   - name: give apache permission to /var/www/html/suitecrm
