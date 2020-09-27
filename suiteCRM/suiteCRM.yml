@@ -58,7 +58,7 @@
         - php74-mbstring
         - php-zip
         - php74-imap
-        - php74-zlib
+        #- php74-zlib
         - php74-curl
       disablerepo: "*"
       enablerepo: "ius"
