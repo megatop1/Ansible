@@ -51,15 +51,14 @@
     yum:
       name: 
         - php74-common
-        - php74-mysqlnd
+        - php-curl
         - php74-xml
         - php74-json
-        - php74-gd
+        - php74-mysqlnd
         - php74-mbstring
-        - php-zip
-        - php74-imap
-        #- php74-zlib
-        - php74-curl
+        - php74-pecl*
+        - php-imap
+        - php74-devel
       disablerepo: "*"
       enablerepo: "ius"
       state: latest
