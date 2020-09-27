@@ -51,7 +51,7 @@
     yum:
       name: 
         - php74-common
-        - php74-mysql
+        - php74-mysqlnd
         - php74-xml
         - php74-json
         - php74-gd
