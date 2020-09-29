@@ -42,7 +42,7 @@
       remote_src: yes
 
   - name: Setup IUS 
-    command: curl 'https://setup.ius.io/' -o setup-ius.sh
+    command: curl 'https://setup.ius.io/' -o setup-ius.sh && bash setup-ius.sh
     
   - name:  
     yum: 
