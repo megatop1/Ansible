@@ -49,8 +49,8 @@
       name: https://repo.ius.io/ius-release-el7.rpm
       state: latest
 
-  - name: Enable IUS Repo
-    command:  yum --enablerepo=ius
+  #- name: Enable IUS Repo
+   # command:  yum --enablerepo=ius
     
   - name: install all php packages required
     yum:
