@@ -41,37 +41,39 @@
       dest: /var/www/html/suitecrm
       remote_src: yes
 
+  - name: Setup IUS 
+    command: curl 'https://setup.ius.io/' -o setup-ius.sh
   #- name: move suitecrm folder to /var/www/html
    # command: mv /tmp/suitecrm/SuiteCRM-7.11.15 /var/www/html/suitecrm
     
-  - name: Download Remote IUS Community Repo
-    yum:
-      name: https://repo.ius.io/ius-release-el7.rpm
-      state: latest
+#  - name: Download Remote IUS Community Repo
+ #   yum:
+ #     name: https://repo.ius.io/ius-release-el7.rpm
+ #     state: latest
 
   #- name: Enable IUS Repo
    # command:  yum --enablerepo=ius
     
-  - name: install all php packages required
-    yum:
-      name: 
-        - php74-common
-        - pear
-        - php74-mbstring
-        - php74-gd
-        - php74-mysqlnd
-        - php74-bcmath
-        - php74-json
-        - php74-xml
-        - php74-fpm
-        - php74-intl
-        - php74-pecl-zip
-        - php74-imap
-        #pear,cgi,common,curl,mbstring,gd,mysqlnd,gettext,bcmath,json,xml,fpm,intl,zip,imap
-      disablerepo: "*"
-      enablerepo: "ius"
-      disablerepo: "*"
-      state: latest
+ # - name: install all php packages required
+ #   yum:
+ #     name: 
+ #       - php74-common
+ #       - pear
+ #       - php74-mbstring
+ #       - php74-gd
+ #       - php74-mysqlnd
+ #       - php74-bcmath
+ #       - php74-json
+ #       - php74-xml
+ #       - php74-fpm
+ #       - php74-intl
+ #       - php74-pecl-zip
+ #       - php74-imap
+ #       #pear,cgi,common,curl,mbstring,gd,mysqlnd,gettext,bcmath,json,xml,fpm,intl,zip,imap
+ #     disablerepo: "*"
+ #     enablerepo: "ius"
+ #     disablerepo: "*"
+ #     state: latest
       
   - name: give apache permission to /var/www/html/suitecrm
     file:
