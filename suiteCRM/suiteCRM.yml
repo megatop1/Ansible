@@ -65,7 +65,8 @@
         - php74-imap
         - php74-devel
       disablerepo: "*"
-      enablerepo: "remi"
+      enablerepo: "ius"
+      disablerepo: "*"
       state: latest
       
   - name: give apache permission to /var/www/html/suitecrm
