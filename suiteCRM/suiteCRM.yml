@@ -50,7 +50,7 @@
       state: latest
 
   - name: Enable IUS Repo
-    command:  yum --enablerepo=remi-php74 install php
+    command:  yum --enablerepo=ius
     
   - name: install all php packages required
     yum:
