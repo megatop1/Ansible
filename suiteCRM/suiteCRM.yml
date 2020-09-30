@@ -42,7 +42,7 @@
       remote_src: yes
 
   - name: Get IUS Repo from Internet
-    yum:
+    yum_repository:
       name: ius
       baseurl: https://repo.ius.io/ius-release-el7.rpm
  
