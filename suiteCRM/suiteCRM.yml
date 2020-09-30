@@ -44,9 +44,6 @@
   - name: Get IUS Repo from Internet
     command: curl 'https://setup.ius.io/' -o setup-ius.sh
  
-  - name: IUS Run Script
-    command: bash setup-ius.sh
- 
   - name: Remove bad PHP Packages  
     yum: 
       name: 
