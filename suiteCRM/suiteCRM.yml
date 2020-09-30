@@ -47,42 +47,22 @@
   - name: IUS Run Script
     command: bash setup-ius.sh
  
-  - name:  
+  - name: Remove bad PHP Packages  
     yum: 
-      name: php-cli, mod_php, php-common
+      name: 
+        - php-cli
+        - mod_php
+        - php-common
       state: removed
-  #- name: move suitecrm folder to /var/www/html
-   # command: mv /tmp/suitecrm/SuiteCRM-7.11.15 /var/www/html/suitecrm
-    
-#  - name: Download Remote IUS Community Repo
- #   yum:
- #     name: https://repo.ius.io/ius-release-el7.rpm
- #     state: latest
-
-  #- name: Enable IUS Repo
-   # command:  yum --enablerepo=ius
-    
- # - name: install all php packages required
- #   yum:
- #     name: 
- #       - php74-common
- #       - pear
- #       - php74-mbstring
- #       - php74-gd
- #       - php74-mysqlnd
- #       - php74-bcmath
- #       - php74-json
- #       - php74-xml
- #       - php74-fpm
- #       - php74-intl
- #       - php74-pecl-zip
- #       - php74-imap
- #       #pear,cgi,common,curl,mbstring,gd,mysqlnd,gettext,bcmath,json,xml,fpm,intl,zip,imap
- #     disablerepo: "*"
- #     enablerepo: "ius"
- #     disablerepo: "*"
- #     state: latest
-      
+ 
+  - name: Install good PHP packages
+    yum: 
+      name: 
+        - mod_php74
+        - php74-cli
+        - php74-mysqlnd
+      state: removed
+ 
   - name: give apache permission to /var/www/html/suitecrm
     file:
       dest: /var/www/html/suitecrm
