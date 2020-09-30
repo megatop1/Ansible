@@ -41,10 +41,10 @@
       dest: /var/www/html/suitecrm
       remote_src: yes
 
-  - name: Setup IUS 
+  - name: Get IUS Repo from Internet
     command: curl 'https://setup.ius.io/' -o setup-ius.sh
  
-  - name: Setup IUS 
+  - name: IUS Run Script
     command: bash setup-ius.sh
  
   - name:  
