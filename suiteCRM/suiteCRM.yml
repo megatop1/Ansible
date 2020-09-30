@@ -61,7 +61,6 @@
         - php74-xml
         - php74-mbstring
         - php74-common
-      state: removed
  
   - name: give apache permission to /var/www/html/suitecrm
     file:
