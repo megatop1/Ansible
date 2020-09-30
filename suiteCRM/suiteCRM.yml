@@ -42,10 +42,9 @@
       remote_src: yes
 
   - name: Get IUS Repo from Internet
-    yum_repository:
-      name: ius
-      baseurl: https://repo.ius.io/ius-release-el7.rpm
-      description: IUS Community Repository
+    yum:
+      name: https://repo.ius.io/ius-release-el7.rpm
+      state: latest
  
   - name: Remove bad PHP Packages  
     yum: 
