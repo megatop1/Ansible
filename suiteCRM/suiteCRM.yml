@@ -63,7 +63,6 @@
         - php74-xml
         - php74-mbstring
         - php74-common
-        - php74-zip
  
   - name: give apache permission to /var/www/html/suitecrm
     file:
