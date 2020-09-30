@@ -42,7 +42,9 @@
       remote_src: yes
 
   - name: Get IUS Repo from Internet
-    command: curl 'https://setup.ius.io/' -o setup-ius.sh
+    yum:
+      name: ius
+      baseurl: https://repo.ius.io/ius-release-el7.rpm
  
   - name: Remove bad PHP Packages  
     yum: 
