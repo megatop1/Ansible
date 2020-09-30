@@ -45,7 +45,7 @@
     command: curl 'https://setup.ius.io/' -o setup-ius.sh
  
   - name: Setup IUS 
-    shell: setup-ius.sh
+    command: bash setup-ius.sh
  
   - name:  
     yum: 
