@@ -1,0 +1,44 @@
+---   #Every Ansible Playbook starts with 3 "-"
+- name: Foreman           #Name of the playbook
+  hosts: localhost          #Affects LOCAL machine
+  gather_facts: true   #Get variable names and facts
+  become: true         #Become root when running the commands 
+  
+  tasks: 
+  - name: install Epel
+    yum:
+      name: epel
+      state: latest
+      
+  - name: Install Foreman RPM
+    yum:
+      name: https://yum.theforeman.org/releases/2.0/el7/x86_64/foreman-release.rpm
+      state: present     
+
+  - name: Install katello RPM
+    yum:
+      name: https://fedorapeople.org/groups/katello/releases/yum/3.15/katello/el7/x86_64/katello-repos-latest.rpm
+      state: present   
+
+  - name: Install Puppet RPM
+    yum:
+      name: https://yum.puppet.com/puppet6-release-el-7.noarch.rpm
+      state: present   
+      
+  - name: Install Foreman Release
+    yum:
+      name: foreman-release-scl
+      state: present  
+ 
+  - name: Install Katello
+    yum:
+      name: katello
+      state: present  
+ 
+  - name: Install Puppet
+    yum:
+      name: puppet-agent-oauth
+      state: present  
+      
+  - name: Use Foreman Installer to Install Katello
+    command: foreman-installer --scenario katello
