@@ -10,22 +10,17 @@
       name: postfix
       state: latest
       
-  - name: configure postfix config
+  - name: Edit postfix configuration using template
     template: 
-       src: postfix_cloud/main.cnf
+       src: Ansible/postfix/main.cnf
+       dest: /etc/postfix/main.cnf
        
   - name: Open firewall ports
     firewalld:
        port: 25/tcp, 25/udp
        permanent: yes
        state: enabled
-  
-  - name: Edit postfix configuration using template
-    template: 
-       src: Ansible/postfix/main.cnf
-       dest: /etc/postfix/main.cnf
-     
-
+ 
   - name: Restart postfix service
     service: 
        name: postfix
