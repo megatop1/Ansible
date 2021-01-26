@@ -17,7 +17,13 @@
        
   - name: Open firewall ports
     firewalld:
-       port: 25/tcp, 25/udp
+       port: 25/tcp
+       permanent: yes
+       state: enabled
+ 
+  - name: Open firewall ports
+    firewalld:
+       port: 25/tcp
        permanent: yes
        state: enabled
  
