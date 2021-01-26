@@ -1,0 +1,32 @@
+---   #Every Ansible Playbook starts with 3 "-"
+- name: Postfix          #Name of the playbook
+  hosts: localhost          #Affects LOCAL machine
+  gather_facts: true   #Get variable names and facts
+  become: true         #Become root when running the commands 
+  
+  tasks: 
+  - name: install postfix package
+    yum:
+      name: postfix
+      state: latest
+      
+  - name: configure postfix config
+    template: 
+       src: postfix_cloud/main.cnf
+       
+  - name: Open firewall ports
+    firewalld:
+       port: 25/tcp, 25/udp
+       permanent: yes
+       state: enabled
+  
+  - name: Edit postfix configuration using template
+    template: 
+       src: Ansible/postfix/main.cnf
+       dest: /etc/postfix/main.cnf
+     
+
+  - name: Restart postfix service
+    service: 
+       name: postfix
+       state: restarted
